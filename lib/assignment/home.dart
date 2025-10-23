@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
            // mainAxisExtent: 320,
             childAspectRatio: 0.55,
           ),
-          itemCount: 6,
+          itemCount: cardData.length,
           itemBuilder: (context, index) {
             final item = cardData[index];
             return
