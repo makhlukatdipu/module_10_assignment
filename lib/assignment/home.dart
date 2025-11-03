@@ -80,7 +80,7 @@ class Home extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 8,
             mainAxisSpacing: 8,
-           // mainAxisExtent: 320,
+            //mainAxisExtent: 350,
             childAspectRatio: 0.55,
           ),
           itemCount: cardData.length,

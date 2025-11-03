@@ -44,7 +44,8 @@ class homeElements extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return
+      Container(
 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
@@ -158,7 +159,7 @@ class homeElements extends StatelessWidget {
             ),
           ),
 
-          Spacer(),
+Spacer(),
 
           Stack(
             children: [
