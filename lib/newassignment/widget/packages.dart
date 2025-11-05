@@ -40,70 +40,73 @@ class packages extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
 
-              Padding(
-                padding: EdgeInsets.all(5.r),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15.sp,
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(5.r),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.sp,
+                        ),
                       ),
-                    ),
 
-                    SizedBox(height: 4.h),
+                      SizedBox(height: 4.h),
 
-                    Row(
-                      children: [
-                        Icon(Icons.timer_sharp, size: 20.h),
-                        Text(
-                          ' $night night * $day day',
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    SizedBox(height: 15.h),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          price,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16.sp,
-                            color: Colors.blue,
-                          ),
-                        ),
-
-                        SizedBox(width: 55.w,),
-                       ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.r),
-                              ),
-                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                            ),
-                            onPressed: () {},
-                            child: Text(
-                              'Book Now',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.bold
-                              ),
+                      Row(
+                        children: [
+                          Icon(Icons.timer_sharp, size: 20.h),
+                          Text(
+                            ' $night night * $day day',
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500
                             ),
                           ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+
+                      SizedBox(height: 15.h),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            price,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              color: Colors.blue,
+                            ),
+                          ),
+
+                          //SizedBox(width: 55.w,),
+
+                         ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.blue,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                'Book Now',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

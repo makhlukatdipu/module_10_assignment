@@ -41,10 +41,9 @@ class _todoState extends State<todo> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('No',
-              style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold),
+            child: Text(
+              'No',
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
             ),
           ),
           TextButton(
@@ -58,8 +57,9 @@ class _todoState extends State<todo> {
               'Yes',
               style: TextStyle(
                 fontSize: 16.sp,
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold),
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
@@ -105,7 +105,11 @@ class _todoState extends State<todo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ToDo App'), backgroundColor: Colors.blue),
+      appBar: AppBar(
+        title: Text('ToDo App'),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -159,29 +163,60 @@ class _todoState extends State<todo> {
               itemCount: task.length,
               itemBuilder: (context, index) {
                 return Card(
-                  child:
-                  ListTile(
-                    title: Text(task[index],style: TextStyle(
+                  child: ListTile(
+                    title: Text(
+                      task[index],
+                      style: TextStyle(
                         fontSize: 16.sp,
-                        fontWeight: FontWeight.bold),),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            editTask(index);
-                          },
-                          icon: Icon(Icons.edit),
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            deleteTask(index);
-                          },
-                          icon: Icon(Icons.delete),
-                        ),
-                      ],
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
+                    trailing:
+                        // Row(
+                        //    mainAxisSize: MainAxisSize.min,
+                        //   children: [
+                        //     IconButton(
+                        //       onPressed: () => editTask(index),
+                        //       icon: Icon(Icons.edit),
+                        //     ),
+                        //     IconButton(
+                        //       onPressed: () => deleteTask(index),
+                        //       icon: Icon(Icons.delete),
+                        //     ),
+                        //   ],
+                        // ),
+                        PopupMenuButton(
+                          itemBuilder: (context) => [
+                            PopupMenuItem(
+                              value: 'edit',
+                              child: Row(
+                                children: [
+                                  Icon(Icons.edit, color: Colors.blue),
+                                  SizedBox(width: 8.w),
+                                  Text('Edit'),
+                                ],
+                              ),
+                            ),
+                            PopupMenuItem(
+                              value: 'delete',
+                              child: Row(
+                                children: [
+                                  Icon(Icons.delete, color: Colors.red),
+                                  SizedBox(width: 8.w),
+                                  Text('Delete'),
+                                ],
+                              ),
+                            ),
+                          ],
+                          onSelected: (value) {
+                            if (value == 'edit') {
+                              editTask(index);
+                            } else if (value == 'delete') {
+                              deleteTask(index);
+                            }
+                          },
+                        ),
+                  ),
                 );
               },
             ),
